@@ -2,23 +2,23 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Imagecard from "./Imagecard";
 
-//  const API_URL = 'https://api.unsplash.com/photos/?client_id=BIuquMALEZk40BV3IOvH04GW6-JkUdfBPkrqjHoYkRo'
-
 const App = () => {
   const [images, setImages] = useState([]);
+  const [searchTerm, setSearchTerm] = useState([])
 
-  const searchImage = async () => {
+  const searchImage = async (query) => {
     const response = await fetch(
-      `https://api.unsplash.com/photos/?client_id=BIuquMALEZk40BV3IOvH04GW6-JkUdfBPkrqjHoYkRo`
+      `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=BIuquMALEZk40BV3IOvH04GW6-JkUdfBPkrqjHoYkRo`
     );
     const data = await response.json();
 
-    setImages(data);
-    console.log(data);
+    setImages(data.results);
+    console.log(data.results);
+
   };
 
   useEffect(() => {
-    searchImage();
+    searchImage('bird');
   }, []);
 
   return (
@@ -29,24 +29,21 @@ const App = () => {
 
         <div className="search">
           <input placeholder="Search images here"
-           onChange={() => {}} />
+          value={searchTerm}
+           onChange={(e) => {setSearchTerm(e.target.value)}} />
         </div>
 
         <div className="button">
-          <button onClick={searchImage} >Search</button>
+          <button onClick={() =>{searchImage(searchTerm)}} >Search</button>
         </div>
           
-        {images?.length > 0 ? (
-        <div className="imagestructure">
-          {images.map((image) => (
-            <Imagecard images={images} />
-          ))}
-        </div>
-      ) : (
-        <div className="empty">
-          <h2>No Image found</h2>
-        </div>
-      )}
+     <div className="imgCollection" >
+      {images.map((image)=>{
+          return (
+           <Imagecard image={image} key={image.id} />
+          )
+      })}
+      </div>
        
       </div>
     </>
