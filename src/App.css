@@ -1,24 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
   padding: 30px 0px;
-  background: rgb(175, 192, 240);
-  background: linear-gradient(180deg, rgba(175, 192, 240, 1) 0%, rgba(255, 255, 255, 1) 43%);
-  /* background: rgb(158, 183, 255);
-  background: linear-gradient(259deg, rgba(158, 183, 255, 1) 0%, rgba(135, 206, 255, 0.4206932773109243) 97%); */
+  font-family: 'Abhaya Libre';
+  font-size: 22px;
+  /* background-image: url('https://i.pinimg.com/564x/ff/07/22/ff072293fbb9127c7fd7a7d4ad0be174.jpg'); */
+  background-image: url('https://i.pinimg.com/564x/c3/92/94/c39294afe7007357c02ab63047b9a28b.jpg');
+
+  /* background-image: url('https://i.pinimg.com/564x/f1/d2/c0/f1d2c05810056909549ccc79769f1f36.jpg'); */
+  background-repeat: no-repeat;
+  background-size: 100% 65%;
+  height: 200px;
 }
 
 .app {
   padding: 0;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
 }
 
 .app h1 {
@@ -26,8 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  color: rgb(34, 34, 34);
-  font-style: italic;
+  color: rgba(34, 34, 34, 0.837);
 }
 
 .app .search {
@@ -35,34 +35,36 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 0;
-  background: rgb(187, 203, 247);
-  background: linear-gradient(180deg, rgba(187, 203, 247, 1) 56%, rgba(255, 255, 255, 1) 65%);
 }
 
 .app .search button {
   padding: 22px 14px;
   font-size: 15px;
   margin: 0;
-  background: #3B71CA;
+  background: #4072d0;
   text-decoration: none;
   border: none;
   color: #fff;
+  border-bottom-right-radius: 20px;
 }
 
-.app .search button:hover{
+.app .search button:hover {
   background: #5286dbd1;
 }
 
 .app .search input {
   padding: 22px 10px;
   width: 600px;
+  font-size: 15px;
+  outline: none;
   margin: 20px;
   border: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-right: 0px;
+  border-top-left-radius: 20px;
 }
 
-.app .search input:hover{
+.app .search input:hover {
   border: antiquewhite;
 }
 
@@ -74,7 +76,7 @@ body {
   background: #fff;
 
   list-style: none;
-  column-gap: 10px;
+  column-gap: 20px;
   padding: 20px;
   column-count: 6;
 }
@@ -91,6 +93,7 @@ body {
   border: 0px solid #333;
   break-inside: avoid;
   position: relative;
+  padding-bottom: 20px;
 
 }
 
@@ -110,7 +113,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: calc(100% - 5px);
+  height: calc(100% - 26px);
   background: #00000055;
   width: 100%;
   border-radius: 20px;
@@ -133,6 +136,15 @@ body {
   border-radius: 20px;
 }
 
+.imgCollection .card .details p {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 13px;
+}
+
 .imgCollection .card .details .detail1 p {
   color: white;
 }
@@ -140,4 +152,25 @@ body {
 .imgCollection .card .details #profileimg {
   width: 35px;
   border-radius: 50%;
+}
+
+@media (width<450px) {
+  .imgCollection {
+    column-count: 1
+  }
+
+  .app .search {
+    margin-right: 15px;
+  }
+
+  .app .search input {
+    padding: 16px 10px;
+    width: 180px;
+    font-size: 12px;
+  }
+
+  .app .search button {
+    padding: 16px 8px;
+    font-size: 12px;
+  }
 }

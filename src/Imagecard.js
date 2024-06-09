@@ -4,9 +4,8 @@ const Imagecard = ({ image }) => {
       <img src={image.urls.small} />
 
       <div className="details">
+        <p>🤍{image.likes}</p>
         <div className="detail1">
-          
-          {/* <p>{image.alt_description}</p> */}
           <img id="profileimg" src={image.user.profile_image.small} />
           <p>{image.user.username}</p>
         </div>
