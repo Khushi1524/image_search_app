@@ -1,28 +1,64 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.app{
+.app {
   padding: 0;
 }
 
-.imgCollection{
+body{
+  padding: 30px 0px;
+}
+
+
+.app h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.app .search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app .search button{
+   padding: 10px 15px;
+   font-size: 14px;
+   margin: 0;
+   background:#3B71CA;
+   text-decoration: none;
+   border: none;
+   color: #fff;
+}
+
+.app .search input{
+  padding: 10px 10px;
+  width: 500px;
+  margin: 20px;
+}
+
+.imgCollection {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   justify-content: center;
 }
 
 
-.imgCollection .card{
-  max-width: calc(100% / 4);
+.imgCollection .card {
+  max-width: calc(100% / 6);
+ 
 }
 
-.imgCollection .card img{
-width: 100%;
- height: 300px;
- overflow: hidden;
- object-fit: cover;
+.imgCollection .card img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 20px;
 }
