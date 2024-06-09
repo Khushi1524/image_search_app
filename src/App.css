@@ -154,7 +154,7 @@ body {
   border-radius: 50%;
 }
 
-@media (width<450px) {
+@media (max-width: 600px) {
   .imgCollection {
     column-count: 1
   }
@@ -172,5 +172,11 @@ body {
   .app .search button {
     padding: 16px 8px;
     font-size: 12px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .imgCollection {
+    column-count: 4;
   }
 }
